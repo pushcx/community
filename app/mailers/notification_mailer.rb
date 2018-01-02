@@ -45,7 +45,7 @@ private
     @reply_info = ReplyInfoVerifier.generate(user, post)
 
     if post.previous_message_id
-      headers["References"] = headers["In-Reply-To"] = post.previous_message_id
+      headers["References"] = "thread-#{post.thread_id}/post-1@community.recurse.com"
     end
 
     mail(
